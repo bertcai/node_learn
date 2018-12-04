@@ -1,0 +1,42 @@
+Asynchronously rename file at oldPath to the pathname provided as newPath. In the case that newPath already exists, it will be overwritten. No arguments other than a possible exception are given to the completion callback.Asynchronously rename file at oldPath to the pathname provided as newPath. In the case that newPath already exists, it will be overwritten. No arguments other than a possible exception are given to the completion callback.
+
+Asynchronously rename file at oldPath to the pathname provided as newPath. In the case that newPath already exists, it will be overwritten. No arguments other than a possible exception are given to the completion callback.Asynchronously rename file at oldPath to the pathname provided as newPath. In the case that newPath already exists, it will be overwritten. No arguments other than a possible exception are given to the completion callback.Asynchronously rename file at oldPath to the pathname provided as newPath. In the case that newPath already exists, it will be overwritten. No arguments other than a possible exception are given to the completion callback.Asynchronously rename file at oldPath to the pathname provided as newPath. In the case that newPath already exists, it will be overwritten. No arguments other than a possible exception are given to the completion callback.Asynchronously rename file at oldPath to the pathname provided as newPath. In the case that newPath already exists, it will be overwritten. No arguments other than a possible exception are given to the completion callback.
+sv
+Asynchronously rename file at oldPath to the pathname provided as newPath. In the case that newPath already exists, it will be overwritten. No arguments other than a possible exception are given to the completion callback.Asynchronously rename file at oldPath to the pathname provided as newPath. In the case that newPath already exists, it will be overwritten. No arguments other than a possible exception are given to the completion callback.
+
+
+
+## 项目立项需求
+
++ 符合国家的相关法规和政策要求
++ 满足业务发展和经营管理需求，投入产出合理，能够提高我行的市场竞争能力和经营管理效益
++ 具有抗技术风险能力，采取的风险控制预防措施有效
++ 符合全行统一的软件与硬件技术标准，兼顾技术的可行性、先进性、实用性和其他产品的兼容性，可推广性强
+
+
+## 项目管理的总体原则
+
++ 业务创新，价值创造原则
++ 自主可控，安全可信原则
++ 分级管理，重点优先原则
++ 有序实施，预防风险原则
+
+## 版本投产说明应该包含哪几个内容
+
++ 系统名称
++ 版本号
++ 投产内容
++ 相关需求编号
++ 风险评估
+
+## 投产流程
+
++ 版本准备
++ 版本提交
++ 投产申请
++ 投产实施
++ 投产后续事项
+
+
+
+

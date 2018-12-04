@@ -1,0 +1,19 @@
+{
+  "name": "es2015-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "uglify-es": "^3.3.9"
+  },
+  "scripts": {
+    "babel": "./node_modules/.bin/babel browser.js -d build",
+    "uglify": "./node_modules/.bin/uglifyjs build/browser.js -o build/browser.min.js",
+    "build": "npm run babel && npm run uglify"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}
