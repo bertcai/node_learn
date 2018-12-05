@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const entries = require('./routes/entries')
+const validate = require('./middleware/validate')
 
 var app = express();
 
@@ -23,7 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/post', entries.form)
-app.post('/post', entries.submit)
+app.post('/post', validate.required('entry[title]'), validate.lengthAbove('entry[title]', 4), entries.submit)
 app.get('/', entries.list)
 
 // app.use('/', indexRouter);
@@ -44,5 +45,27 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+function requireEntryTitle(req, res, next) {
+  const title = req.body.entry.title
+  if (title) {
+    next()
+  } else {
+    res.error('Title is required!')
+    res.redirect('back')
+  }
+}
+
+function requireEntryTitleLegthAbove(len) {
+  return (req, res, next) => {
+    const title = req.body.entry.title
+    if (title.length > len) {
+      next()
+    } else {
+      res.err(`Title must be longer than ${len}`)
+      res.redirect('back')
+    }
+  }
+}
 
 module.exports = app;
