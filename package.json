@@ -5,6 +5,7 @@
   "author": "bert_cai",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^3.0.2",
     "express": "^4.16.4"
   }
 }

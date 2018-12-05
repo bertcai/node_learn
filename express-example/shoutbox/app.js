@@ -7,7 +7,10 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const entries = require('./routes/entries')
+const register = require('./routes/register')
 const validate = require('./middleware/validate')
+const session = require('express-session')
+const messages = require('./middleware/messages')
 
 var app = express();
 
@@ -21,11 +24,19 @@ app.use(express.urlencoded({
   extended: true
 }));
 app.use(cookieParser());
+app.use(session({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: true
+}))
+app.use(messages)
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/post', entries.form)
 app.post('/post', validate.required('entry[title]'), validate.lengthAbove('entry[title]', 4), entries.submit)
 app.get('/', entries.list)
+app.get('/register', register.form)
+app.post('/register', register.submit)
 
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
