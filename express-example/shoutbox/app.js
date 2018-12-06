@@ -11,6 +11,8 @@ const register = require('./routes/register')
 const validate = require('./middleware/validate')
 const session = require('express-session')
 const messages = require('./middleware/messages')
+const login = require('./routes/login')
+const user = require('./middleware/user')
 
 var app = express();
 
@@ -31,12 +33,16 @@ app.use(session({
 }))
 app.use(messages)
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(user)
 
 app.get('/post', entries.form)
 app.post('/post', validate.required('entry[title]'), validate.lengthAbove('entry[title]', 4), entries.submit)
 app.get('/', entries.list)
 app.get('/register', register.form)
 app.post('/register', register.submit)
+app.get('/login', login.form)
+app.post('/login', login.submit)
+app.get('/logout', login.logout)
 
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);

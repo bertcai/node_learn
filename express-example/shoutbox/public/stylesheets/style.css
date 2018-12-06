@@ -10,3 +10,20 @@ a {
 .error {
   color: red;
 }
+
+#menu {
+  background-color: dimgray;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 12px;
+}
+
+#menu a {
+  text-decoration: none;
+  color: white;
+}
+
+#menu .name:after {
+  content: ' -'
+}
