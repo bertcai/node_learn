@@ -13,6 +13,7 @@ const session = require('express-session')
 const messages = require('./middleware/messages')
 const login = require('./routes/login')
 const user = require('./middleware/user')
+const api = require('./routes/api')
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use(session({
 }))
 app.use(messages)
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/api', api.auth)
 app.use(user)
 
 app.get('/post', entries.form)
@@ -43,6 +45,8 @@ app.post('/register', register.submit)
 app.get('/login', login.form)
 app.post('/login', login.submit)
 app.get('/logout', login.logout)
+app.get('/api/user/:id', api.user)
+app.post('/api/entry', entries.submit)
 
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
